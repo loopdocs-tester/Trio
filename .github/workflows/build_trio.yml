@@ -193,7 +193,7 @@ jobs:
   # Builds Trio
   build:
     name: Build
-    needs: [validate, check_alive_and_permissions, check_latest_from_upstream, check_certs]
+    needs: [validate, check_alive_and_permissions, check_latest_from_upstream]
     runs-on: macos-14
     permissions:
       contents: write
