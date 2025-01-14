@@ -28,7 +28,7 @@ jobs:
   # Checks if GH_PAT holds workflow permissions
   # Checks for existence of alive branch; if non-existent creates it
   check_alive_and_permissions:
-    needs: create_certs
+    needs: check_certs
     runs-on: ubuntu-latest
     name: Check alive branch and permissions
     permissions:
@@ -187,7 +187,7 @@ jobs:
   # Builds Trio
   build:
     name: Build
-    needs: [create_certs, check_alive_and_permissions, check_latest_from_upstream]
+    needs: [check_certs, check_alive_and_permissions, check_latest_from_upstream]
     runs-on: macos-14
     permissions:
       contents: write
